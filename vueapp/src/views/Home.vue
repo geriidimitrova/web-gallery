@@ -3,7 +3,7 @@
     <div id="hero-image">
       <div class="wrapper center">
         <h2 class="banner-name">Web Gallery</h2>
-        <router-link to="/exhibition" class="button banner-btn">View Exhibition</router-link>
+        <router-link to="/exhibitions" class="button banner-btn">View Exhibitions</router-link>
       </div>
     </div>
     <div class="container row">

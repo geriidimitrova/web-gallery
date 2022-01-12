@@ -6,7 +6,7 @@
                     <div class="card-title">
                         <span>Rejected Applications</span>
                     </div>
-                    <table>
+                    <table class="responsive-table">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -65,7 +65,7 @@ export default {
                 });
         },
         approve(id) {
-            DataService.approveItem(id)
+            DataService.approve(id)
                 .then(() => {
                     this.$M.toast({ html: "Approved", classes: 'toast-seccess' });
                 })

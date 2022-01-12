@@ -12,7 +12,7 @@
                     style="margin-top: 20px; margin-bottom: 20px;">Add new
                     </a>
 
-                    <table>
+                    <table class="responsive-table">
                         <thead>
                             <tr>
                                 <th>Id</th>

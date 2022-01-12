@@ -39,7 +39,6 @@ app.get("/items", items.findAll);
 app.get("/items/approved", items.findAllApproved);
 app.get("/items/rejected", items.findAllRejected);
 app.get("/items/applications", items.findAllApplications);
-app.get("/items?eventId=:id", items.findByEvent);
 app.put("/items/:id/approve", items.approve);
 app.put("/items/:id/reject", items.reject);
 

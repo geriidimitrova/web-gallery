@@ -3,22 +3,15 @@ const Item = db.items;
 
 exports.create = (req, res) => {
   if (!req.body.name) {
-    res.status(400).send({
-      message: "Name is required"
-    });
+    res.status(400).send({ message: "Name is required" });
     return;
   }
   if (!req.body.author) {
-    res.status(400).send({
-      message: "Author is required"
-    });
+    res.status(400).send({ message: "Author is required" });
     return;
   }
   if(!req.files.file) {
-    res.status(400).send({
-      status: false,
-      message: 'No file uploaded'
-    });
+    res.status(400).send({ message: 'No file uploaded' });
     return;
   } 
 
@@ -49,7 +42,13 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Item.findAll({ include: ["event"] })
+  const id = req.query.eventId;
+  const status = req.query.status;
+
+  if(id) { condition.eventId = id }
+  if(status) { condition.status = status }
+
+  Item.findAll({ where: condition, include: ["event"] })
     .then(data => {
       res.send(data);
     })
@@ -93,20 +92,6 @@ exports.findAllApplications = (req, res) => {
       res.status(500).send({
         message:
           err.message || "Some error occurred while retrieving applications."
-      });
-    });
-};
-
-exports.findByEvent = (req, res) => {
-  var id = req.params.eventId;
-  Item.findAll({ where: { eventId: id }, include: ["event"] })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving approved items."
       });
     });
 };

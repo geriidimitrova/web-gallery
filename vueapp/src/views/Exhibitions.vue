@@ -5,7 +5,7 @@
         <div class="card-title">
           <span>Apply for exhibition</span>
         </div>
-        <table>
+        <table class="responsive-table">
           <thead>
             <tr>
               <th>Title</th>

@@ -67,11 +67,9 @@ class DataService {
   }
 
   findItemByEvent(id) {
-    return axios.get(`/items?eventId=${id}`);
+    return axios.get(`/items?eventId=${id}&status=approved`);
   }
 
-
-  
   getAllItems() {
     return axios.get("/items");
   }

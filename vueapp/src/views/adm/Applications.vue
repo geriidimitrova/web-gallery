@@ -6,7 +6,7 @@
                     <div class="card-title">
                         <span>Applications</span>
                     </div>
-                    <table>
+                    <table class="responsive-table">
                         <thead>
                             <tr>
                                 <th>Title</th>
@@ -65,14 +65,14 @@ export default {
             return `http://localhost:8081/${app.fileName}`;
         },
         approve(id) {
-            DataService.approveItem(id)
+            DataService.approve(id)
                 .then(() => {
                     this.$M.toast({ html: "Approved", classes: 'toast-seccess' });
                 })
                 .catch((error) => { this.error = error.response.data.message; });
         },
         reject(id) {
-            DataService.rejectItem(id)
+            DataService.reject(id)
                 .then(() => {
                     this.$M.toast({ html: "Rejected", classes: 'toast-seccess' });
                 })
