@@ -14,7 +14,6 @@
                                 <th>Author</th>
                                 <th>Exhibition</th>
                                 <th>Image</th>
-                                <th>Rejected By</th>
                             </tr>
                         </thead>
 
@@ -25,7 +24,6 @@
                                 <td>{{app.author}}</td>
                                 <td>{{app.event.title}}</td>
                                 <td><a :href="getImage(app)" target="_blank">View Image</a></td>
-                                <td>{{app.userId}}</td>
                                 <td>
                                     <a class="waves-effect waves-light btn modal-trigger" 
                                         @click="approve(app.id)">Approve
