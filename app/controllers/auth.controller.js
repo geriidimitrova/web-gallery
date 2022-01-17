@@ -8,7 +8,8 @@ var bcrypt = require("bcrypt");
 exports.login = (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
+      email: req.body.email,
+      isActive: 'yes'
     }
   })
     .then(user => {

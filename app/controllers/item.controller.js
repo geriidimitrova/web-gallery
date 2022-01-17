@@ -44,6 +44,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const id = req.query.eventId;
   const status = req.query.status;
+  var condition = {};
 
   if(id) { condition.eventId = id }
   if(status) { condition.status = status }
